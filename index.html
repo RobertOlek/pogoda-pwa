@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aplikacja Pogodowa</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" href="icon.png" />
+</head>
+<body>
+  <div class="container">
+    <h1>🌤️ Sprawdź pogodę</h1>
+    <input type="text" id="city" placeholder="Wpisz miasto" />
+    <input type="date" id="date" />
+    <button onclick="getWeather()">Sprawdź</button>
+    <div id="weather" class="result"></div>
+
+    <h2>📜 Historia</h2>
+    <ul id="history"></ul>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js');
+    }
+  </script>
+</body>
+</html>
